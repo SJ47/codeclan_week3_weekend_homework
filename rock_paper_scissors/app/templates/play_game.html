@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Play Game</h2>
+
+<div class="game-container">
+    <form action="/play" method="post">
+        <div class="player1-name-box">
+            <label for="player1_name">Player 1</label>
+            <br>
+            <input type="text" name="player1_name" placeholder="Player 1" value="{{player1_name}}">
+        </div>
+        <div class="player1-selection">
+            <select name="player1_selection">
+                <!-- <option value="" selected disabled hidden>Choose here</option> -->
+
+                <option value="rock">Rock</option>
+
+                {% if player1_choice == "paper"%}
+                <option selected value="paper">Paper</option>
+                {% else %}
+                <option value="paper">Paper</option>
+                {% endif %}
+
+                {% if player1_choice == "scissors"%}
+                <option selected value="scissors">Scissors</option>
+                {% else %}
+                <option value="scissors">Scissors</option>
+
+                {% endif %}
+            </select>
+        </div>
+        <input class="submit_btn" type="submit">
+    </form>
+    <div class="computer-name-box">
+        Player 2
+        <br>
+        {{player2_name}}
+    </div>
+
+    <div class="winner-box">
+        {% if winner != None %}
+        <h2>{{winner}} WINS!!</h2>
+        {%else%}
+        <h2>It's a DRAW!!</h2>
+        {% endif%}
+    </div>
+
+    <div class="computer-selection">
+        <h4>{{player2_choice}}</h4>
+    </div>
+
+</div>
+
+
+{% endblock %}

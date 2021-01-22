@@ -1,15 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% block content %}
+<div class="instructions-container">
+    <h2>Welcome to Rock, Paper and Scissors</h2>
+    <h3>Rules of the Game</h3>
+    <p>Select <strong>Play Game</strong> to start a new game
+    <p>
+    <p>Enter <strong>your name </strong>in the player1 box (typing over player1) and press <strong>ENTER</strong></p>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock, Paper, Scissors</title>
-</head>
+    <p>You will be playing against the computer. The computer will randomly select an choice after you have selected
+        your choice.</p>
+    <ul>
+        <p>ROCK beats SCISSORS</p>
+        <p>PAPER beats ROCK</p>
+        <p>SCISSORS beats PAPER</p>
+        <p>In the event that you and the computer select the same choice, it will be a draw.</p>
+    </ul>
 
-<body>
-    <h1>Welcome to Rock, Paper and Scissors</h1>
-</body>
 
-</html>
+    </p>
+</div>
+{% endblock %}

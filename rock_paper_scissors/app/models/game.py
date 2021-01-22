@@ -1,3 +1,4 @@
+import random
 class Game:
 
     def select_winner(self, player1, player2):
@@ -5,33 +6,36 @@ class Game:
         valid_choices = ["rock", "paper", "scissors"]
 
         # Stop checking if either player made an invalid entry
-        if (player1.choice) not in valid_choices:
+        if (player1.choice.lower()) not in valid_choices:
             return "Invalid Choices Made by Player 1 - Try Again"
         
-        if (player2.choice) not in valid_choices:
+        if (player2.choice.lower()) not in valid_choices:
             return "Invalid Choices Made by Player 2 - Try Again"
         
-        # Find the winner
-        winner = "something went wrong in finding a winner"
-        
-        # check if it is a DRAW
-        if player1.choice == player2.choice:
-            winner = "Draw"
-            return winner
+        ### Find the winner
+       
+        # check if it is a DRAW and return none - no winner
+        if player1.choice.lower() == player2.choice.lower():
+            return None
         
         # Check for winner if player1 has ROCK
         winner = player1.name
-        if player1.choice == "rock":
-            if player2.choice == "paper":
+        if player1.choice.lower() == "rock":
+            if player2.choice.lower() == "paper":
                 winner = player2.name
         # Check for winner if player1 has PAPER
-        elif player1.choice == "paper":
-            if player2.choice == "scissors":
+        elif player1.choice.lower() == "paper":
+            if player2.choice.lower() == "scissors":
                 winner = player2.name
         # Check for winner if player1 has SCISSORS
-        elif player1.choice == "scissors":
-            if player2.choice == "rock":
+        elif player1.choice.lower() == "scissors":
+            if player2.choice.lower() == "rock":
                 winner = player2.name
        
         # return winner 
         return winner
+
+    def select_computer_random_choice(self):
+        valid_choices = ["rock", "paper", "scissors"]
+        return random.choice(valid_choices)
+

@@ -1,0 +1,134 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Lato, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    background: lightgrey;
+    width: 50%;
+    border: 5px solid grey;
+    margin: 1em;
+    padding: 1em;
+    border-radius: 25px;
+}
+
+.nav > ul {
+    display: flex;
+    padding: 0;
+    justify-content: center;
+}
+
+.nav > ul > li {
+    list-style: none;
+    margin: 0 2em;
+}
+
+h1 {
+    text-align: center;
+    /* border: 1px solid black; */
+    background-color: grey;
+    color: #fff;
+    padding: .5em 0;
+    margin-top: 0;
+    border-radius: 25px;
+}
+
+.btn-links {
+    background-color: grey;
+    border-radius: 25px;
+    padding: 1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+footer {
+    font-size: .75em;
+    text-align: center;
+    background: gray;
+    color: #fff;
+    border-radius: 25px;
+    margin-top: 3em;
+    padding: .3em;
+}
+
+
+/* Instructions page */
+.instructions-container {
+    margin: 0 2em
+}
+
+/* Play game page  */
+.game-container {
+    display: grid;
+    border: 1px solid grey;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    /* grid-template-rows: auto auto; */
+    gap: 1em
+}
+
+.player1-name-box {
+    grid-area: 1 / 1 / 2 / 2;
+    border: 1px solid grey;
+    /* text-align: center; */
+    width: 100%;
+    padding-top: .8em;
+    height: 80px;
+}
+
+.player1-selection {
+    grid-area: 2 / 1 / 3 / 2;
+    border: 1px solid grey;
+    /* text-align: center; */
+    width: 100%;
+    height: 120px;
+    padding-top: .8em;
+}
+
+.winner-box {
+    grid-area: 1 / 2 / 3 / 3;
+    border: 1px solid grey;
+    width: 100%;
+    justify-self: center;
+    background-color: orange;
+    text-align: center;
+    padding-top: 5em;
+    height: 200px;
+}
+
+.computer-name-box {
+    grid-area: 1 / 3 / 2 / 4;
+    border: 1px solid grey;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+    padding-top: .8em;
+}
+
+.computer-selection {
+    border: 1px solid grey;
+    width: 100%;
+    height: 120px;
+    grid-area: 2 / 3 / 3 / 4;
+    text-align: center;
+    padding-top: .8em;
+}
+
+.submit_btn {
+    background-color: grey;
+    font-size: 1em;
+    padding: 0.5em 1.5em;
+    border: unset;
+    cursor: pointer;
+    color: white;
+}
+
+.submit_btn:hover, .submit_btn:focus {
+    background-color: rgba(128, 128,128, 0.7);
+}
