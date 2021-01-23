@@ -2,18 +2,20 @@ import random
 class Game:
 
     # Class scoped variable for all instance functions to access
+    # Create a list of valid choices
     valid_choices = ["rock", "paper", "scissors"]
 
     # Function will return the winner after comparing both players choices
-    def select_winner(self, player1, player2):
-        # Create a list of valid choices
+    @classmethod    
+    def select_winner(cls, player1, player2):
+        
         # valid_choices = ["rock", "paper", "scissors"]
 
         # Stop checking if either player made an invalid entry
-        if (player1.choice.lower()) not in self.valid_choices:
+        if (player1.choice.lower()) not in cls.valid_choices:
             return "Invalid Choices Made by Player 1 - Try Again"
         
-        if (player2.choice.lower()) not in self.valid_choices:
+        if (player2.choice.lower()) not in cls.valid_choices:
             return "Invalid Choices Made by Player 2 - Try Again"
         
         ### Find the winner
@@ -40,7 +42,8 @@ class Game:
         return winner
 
     # Return random choice for computer
-    def select_computer_random_choice(self):
+    @classmethod
+    def select_computer_random_choice(cls):
         # valid_choices = ["rock", "paper", "scissors"]
-        return random.choice(self.valid_choices)
+        return random.choice(cls.valid_choices)
 

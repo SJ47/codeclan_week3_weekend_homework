@@ -10,12 +10,15 @@
             <label for="player1_name">Player 1</label>
             <br>
             <input type="text" name="player1_name" placeholder="Player 1" value="{{player1_name}}">
-            <!-- </div> -->
-            <!-- <div class="player1-selection"> -->
             <select class="player1-selection" name="player1_selection">
-                <!-- <option value="" selected disabled hidden>Choose here</option> -->
+                <option value="" selected disabled hidden>Choose here</option>
 
+                <!-- Keep previous selection shown in drop down box -->
+                {% if player1_choice == "rock"%}
+                <option selected value="rock">Rock</option>
+                {% else %}
                 <option value="rock">Rock</option>
+                {% endif %}
 
                 {% if player1_choice == "paper"%}
                 <option selected value="paper">Paper</option>
@@ -32,31 +35,25 @@
             </select>
             <br>
             <input class="submit_btn" type="submit">
-            <!-- <h4>{{player1_choice}}</h4> -->
         </form>
     </div>
     <div class="computer-box">
         <span>Player 2</span>
-        <p>{{player2_name}}</p>
-        <p>Computer selected
-        <p>
-        <h4>{{player2_choice}}</h4>
+        <p>{{player2_name}} chose {{player2_choice}}</p>
     </div>
 
     <div class="winner-box">
         {% if winner != None %}
         <h2>{{winner}} WINS!!</h2>
-        {% if winner == "Computer"%}
-        <h3>{{player2_choice}} beats {{player1_choice}}</h3>
+        {% if winner == "Computer"%} <p>{{player2_choice}} beats {{player1_choice}}</p>
         {% else %}
-        <h3>{{player1_choice}} beats {{player2_choice}}</h3>
+        <p>{{player1_choice}} beats {{player2_choice}}</p>
         {% endif %}
         {%else%}
         <h2>It's a DRAW!!</h2>
-        <h3>{{player1_choice}} equals {{player2_choice}}</h3>
+        <p>{{player1_choice}} equals {{player2_choice}}</p>
         {% endif%}
     </div>
-
 </div>
 
 
