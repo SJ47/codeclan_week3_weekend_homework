@@ -1,17 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Play Game</h2>
+<h2 class="game-in-play-title">Game in play...</h2>
 
 <div class="game-container">
-    <form action="/play" method="post">
-        <div class="player1-name-box">
+    <div class="player1-box">
+        <form action="/play" method="post">
+
             <label for="player1_name">Player 1</label>
             <br>
             <input type="text" name="player1_name" placeholder="Player 1" value="{{player1_name}}">
-        </div>
-        <div class="player1-selection">
-            <select name="player1_selection">
+            <!-- </div> -->
+            <!-- <div class="player1-selection"> -->
+            <select class="player1-selection" name="player1_selection">
                 <!-- <option value="" selected disabled hidden>Choose here</option> -->
 
                 <option value="rock">Rock</option>
@@ -29,25 +30,31 @@
 
                 {% endif %}
             </select>
-        </div>
-        <input class="submit_btn" type="submit">
-    </form>
-    <div class="computer-name-box">
-        Player 2
-        <br>
-        {{player2_name}}
+            <br>
+            <input class="submit_btn" type="submit">
+            <!-- <h4>{{player1_choice}}</h4> -->
+        </form>
+    </div>
+    <div class="computer-box">
+        <span>Player 2</span>
+        <p>{{player2_name}}</p>
+        <p>Computer selected
+        <p>
+        <h4>{{player2_choice}}</h4>
     </div>
 
     <div class="winner-box">
         {% if winner != None %}
         <h2>{{winner}} WINS!!</h2>
+        {% if winner == "Computer"%}
+        <h3>{{player2_choice}} beats {{player1_choice}}</h3>
+        {% else %}
+        <h3>{{player1_choice}} beats {{player2_choice}}</h3>
+        {% endif %}
         {%else%}
         <h2>It's a DRAW!!</h2>
+        <h3>{{player1_choice}} equals {{player2_choice}}</h3>
         {% endif%}
-    </div>
-
-    <div class="computer-selection">
-        <h4>{{player2_choice}}</h4>
     </div>
 
 </div>

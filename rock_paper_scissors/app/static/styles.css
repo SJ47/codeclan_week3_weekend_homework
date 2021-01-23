@@ -4,13 +4,16 @@
 
 body {
     margin: 0;
-    font-family: Lato, sans-serif;
+    font-family: 'Rock Salt', cursive;
     display: flex;
     justify-content: center;
 }
 
+.game-in-play-title {
+    margin-top: 0;
+}
+
 .container {
-    display: grid;
     background: lightgrey;
     width: 50%;
     border: 5px solid grey;
@@ -21,8 +24,8 @@ body {
 
 .nav > ul {
     display: flex;
-    padding: 0;
     justify-content: center;
+    margin-bottom: 0;
 }
 
 .nav > ul > li {
@@ -30,9 +33,13 @@ body {
     margin: 0 2em;
 }
 
+.nav > ul > li > a {
+    font-size: 1em;
+    padding: 0 2em;
+}
+
 h1 {
     text-align: center;
-    /* border: 1px solid black; */
     background-color: grey;
     color: #fff;
     padding: .5em 0;
@@ -48,6 +55,11 @@ h1 {
     color: #fff;
 }
 
+.btn-links:hover, .btn-links:focus {
+    background: hotpink;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 footer {
     font-size: .75em;
     text-align: center;
@@ -61,74 +73,98 @@ footer {
 
 /* Instructions page */
 .instructions-container {
-    margin: 0 2em
+    margin: 0 2em;
+    font-size: .8em;
 }
 
 /* Play game page  */
 .game-container {
     display: grid;
-    border: 1px solid grey;
-    grid-template-columns: 1fr 1.5fr 1fr;
-    /* grid-template-rows: auto auto; */
+    border: 5px solid grey;
+    border-radius: 25px;
+    grid-template-columns: 200px 300px 200px;
+    grid-template-rows: 300px;
     gap: 1em
 }
 
-.player1-name-box {
+.player1-box {
     grid-area: 1 / 1 / 2 / 2;
-    border: 1px solid grey;
-    /* text-align: center; */
+    text-align: center;
     width: 100%;
     padding-top: .8em;
     height: 80px;
+}
+
+.player1-box > form > label:first-of-type {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.player1-box > form > input {
+    width: 80%;
+    outline: none;
+}
+
+.player1-box > form > input:first-of-type {
+    font-family: 'Rock Salt', cursive;
+    background: transparent;
+    border: unset;
+    border: 1px solid grey;
+    border-radius: 25px;
+    text-align: center;
 }
 
 .player1-selection {
-    grid-area: 2 / 1 / 3 / 2;
+    margin-top: 1em;
+    width: 80%;
+    font-family: 'Rock Salt', cursive;
+    background: transparent;
+    border: unset;
     border: 1px solid grey;
-    /* text-align: center; */
-    width: 100%;
-    height: 120px;
-    padding-top: .8em;
+    border-radius: 25px;
+    text-align-last: center;
+    outline: none;
 }
 
-.winner-box {
-    grid-area: 1 / 2 / 3 / 3;
-    border: 1px solid grey;
-    width: 100%;
-    justify-self: center;
-    background-color: orange;
-    text-align: center;
-    padding-top: 5em;
-    height: 200px;
-}
-
-.computer-name-box {
+.computer-box {
     grid-area: 1 / 3 / 2 / 4;
-    border: 1px solid grey;
     width: 100%;
     height: 80px;
     text-align: center;
     padding-top: .8em;
 }
 
-.computer-selection {
-    border: 1px solid grey;
-    width: 100%;
-    height: 120px;
-    grid-area: 2 / 3 / 3 / 4;
-    text-align: center;
-    padding-top: .8em;
+.computer-box > span {
+    font-size: 1.5em;
+    font-weight: bold;
 }
-
-.submit_btn {
+.winner-box {
+    grid-area: 1 / 2 / 2 / 3;
+    border: 5px solid hotpink;
+    width: 100%;
+    justify-self: center;
     background-color: grey;
-    font-size: 1em;
-    padding: 0.5em 1.5em;
-    border: unset;
-    cursor: pointer;
+    text-align: center;
+    padding-top: 5em;
+    height: 100%;
+    border-radius: 25px;
     color: white;
 }
 
-.submit_btn:hover, .submit_btn:focus {
-    background-color: rgba(128, 128,128, 0.7);
+.submit_btn {
+    font-family: 'Rock Salt', cursive;
+    background-color: grey;
+    font-size: 1em;
+    margin-top: 1em;
+    border: unset;
+    cursor: pointer;
+    color: white;
+    border-radius: 25px;
+    outline: none;
 }
+
+.submit_btn:hover, .submit_btn:focus {
+    background: hotpink;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+

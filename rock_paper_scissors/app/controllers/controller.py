@@ -7,6 +7,7 @@ from app.models.player import Player
 def index():
     return render_template("index.html")
 
+# Route for MVP portion of homework
 @app.route("/<player1_choice>/<player2_choice>")
 def get_player_choices(player1_choice, player2_choice):
     player1 = Player("Fred", player1_choice)
@@ -19,6 +20,7 @@ def get_player_choices(player1_choice, player2_choice):
     # Return the result
     return render_template("result.html", player1=player1, player2=player2, winner=winner)
 
+# Routes for extensions and further extensions of homework
 @app.route("/play")
 def play_game():
     return render_template("play_game.html")
