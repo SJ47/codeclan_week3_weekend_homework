@@ -32,29 +32,43 @@
                 <option value="scissors">Scissors</option>
 
                 {% endif %}
+
             </select>
             <br>
             <input class="submit_btn" type="submit">
         </form>
     </div>
+
     <div class="computer-box">
         <span>Player 2</span>
         <p>{{player2_name}} chose {{player2_choice}}</p>
     </div>
 
-    <div class="winner-box">
-        {% if winner != None %}
+    <!-- Set appropriate coloured border for who wins or none for draw -->
+
+    <!-- Setup for a computer win  -->
+    {% if winner == "Computer" %}
+    <div class="winner-box winner-box-red">
         <h2>{{winner}} WINS!!</h2>
-        {% if winner == "Computer"%} <p>{{player2_choice}} beats {{player1_choice}}</p>
-        {% else %}
+        <p>{{player2_choice}} beats {{player1_choice}}</p>
+    </div>
+
+    <!-- Setup for player1 win  -->
+    {% elif winner == player1_name %}
+    <div class="winner-box winner-box-green">
+        <h2>{{winner}} WINS!!</h2>
         <p>{{player1_choice}} beats {{player2_choice}}</p>
-        {% endif %}
-        {%else%}
+    </div>
+
+    <!-- Setup for a draw  -->
+    {% elif winner == None %}
+    <div class="winner-box">
         <h2>It's a DRAW!!</h2>
         <p>{{player1_choice}} equals {{player2_choice}}</p>
-        {% endif%}
     </div>
-</div>
 
+    {% endif %}
+
+</div>
 
 {% endblock %}
