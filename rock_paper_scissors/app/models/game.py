@@ -5,10 +5,27 @@ class Game:
     # Create a list of valid choices
     valid_choices = ["rock", "paper", "scissors"]
 
-    # Function will return the winner after comparing both players choices
+    # Method will return the winner after comparing both players choices
     @classmethod    
     def select_winner(cls, player1, player2):
-        # Stop checking if either player made an invalid entry (for MVP exercise)     
+        # Stop checking if either player made an invalid entry (for MVP exercise)
+        
+        ## Pseudo code ###
+
+        # If player1 or player 2 choice is not in list of valid choices
+            # return Invalid Selection
+
+        # If player1 choice is the same as player two
+            # return It is a draw
+
+        # If player1 choice is "rock" and player2 choice "paper"
+            # return winner is player2
+        # else If player1 choice is "paper" and player2 choice "scissors"
+            # return winner is player2
+        # else If player1 choice is "scissors" and player2 choice "rock"
+            # return winner is player2
+    
+        
         if ((player1.choice.lower()) not in cls.valid_choices or (player2.choice.lower()) not in cls.valid_choices):
             return "Invalid Choices Made - Try Again"
 
