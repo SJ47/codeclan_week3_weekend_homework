@@ -1,5 +1,4 @@
 # Rock, Paper, Scissors Game
-<h1>Screenshots of homework web pages</h1>
 
 <h3>Screenshot of instructions</h3>
 
